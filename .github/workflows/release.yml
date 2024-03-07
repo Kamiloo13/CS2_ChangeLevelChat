@@ -7,7 +7,7 @@ jobs:
   build:
     env:
       dllName: ChangeLevelChat
-      debugPath: /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/bin/Debug
+      releasePath: /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/bin/Release
 
     runs-on: ubuntu-latest
     strategy:
@@ -29,7 +29,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Create zip
-        run: cd ${debugPath} && mv net7.0 $dllName && zip -r ${dllName}.zip ${dllName}
+        run: cd ${releasePath} && mv net7.0 $dllName && zip -r ${dllName}.zip ${dllName}
 
       - name: Create Release
         id: create_release
@@ -49,6 +49,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ${{env.debugPath}}/${{env.dllName}}.zip
+          asset_path: ${{env.releasePath}}/${{env.dllName}}.zip
           asset_name: ${{env.dllName}}_${{github.ref_name}}.zip
           asset_content_type: application/zip
