@@ -11,14 +11,17 @@ jobs:
       debugPath: /home/runner/work/${{ github.event.repository.name }}/${{ github.event.repository.name }}/bin/Debug
 
     runs-on: ubuntu-latest
-    
+    strategy:
+      matrix:
+        dotnet-version: [ '7.0.x' ]
+
     steps:
     - uses: actions/checkout@v4
 
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: ${{ matrix.dotnet-version }}
     
     - name: Restore dependencies
       run: dotnet restore
