@@ -26,7 +26,7 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build
+        run: dotnet build --configuration Release
 
       - name: Create zip
         run: cd ${debugPath} && mv net7.0 $dllName && zip -r ${dllName}.zip ${dllName}
