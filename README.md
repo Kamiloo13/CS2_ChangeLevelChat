@@ -1,9 +1,9 @@
 [![GitHub Downloads](https://img.shields.io/github/downloads/Kamiloo13/CS2_ChangeLevelChat/total.svg?style=flat-square&label=Downloads)](https://github.com/Kamiloo13/CS2_ChangeLevelChat/releases/latest)
 
-# CS2 Change Level by Chat
+# CS2 Change Level with Chat
 > Written in C# for **Counter-Strike 2** using [CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp)
 
-Allows users to change the map and game mode by in-game chat. 
+Allows users to change the map and game mode with in-game chat. 
 - **Game modes** are just simple config files stored in `csgo/cfg/` directory, those allow for a fast game_type change (e.g. **aim_based**.cfg -> **smoke_training**.cfg).
 - This plugin isn't planned to be used on a public server, it's more for private servers where you want to play with friends that you trust. 
 - Can be toggled off with a command or in config by default.
