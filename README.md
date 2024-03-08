@@ -3,8 +3,8 @@
 # CS2 Change Level by Chat
 > Written in C# for **Counter-Strike 2** using [CounterStrikeSharp](https://github.com/roflmuffin/CounterStrikeSharp)
 
-Allows users to change the map and game mode by chat. 
-- **Game modes** are just simple config files stored in `csgo/cfg/` directory, those allow for an fast game_type change (ex. from aim based config to smoke/training one).
+Allows users to change the map and game mode by in-game chat. 
+- **Game modes** are just simple config files stored in `csgo/cfg/` directory, those allow for a fast game_type change (ex. from aim_based config to smoke_training one).
 - This plugin isn't planned to be used on a public server, it's more for private servers where you want to play with friends that you trust. 
 - Can be toggled off with a command or in config by default.
 - This plugin **IS NOT** a voting system and **IT IS** an instant map change. If you want a voting system instead, you can use [cs2-rockthevote](https://github.com/abnerfs/cs2-rockthevote) plugin.
